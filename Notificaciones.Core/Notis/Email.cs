@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace Notificaciones.Core.Notis
+﻿namespace Notificaciones.Core.Notis
 {
     public class Email : Notificacion
     {
+        public Email(Usuario usuario) : base(usuario) { }
+
         public override void Notificar()
         {
             

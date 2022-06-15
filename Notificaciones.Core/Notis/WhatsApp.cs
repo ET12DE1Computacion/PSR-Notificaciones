@@ -1,15 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace Notificaciones.Core.Notis
+﻿namespace Notificaciones.Core.Notis;
+public class WhatsApp : Notificacion
 {
-    public class WhatsApp : Notificacion
-    {
-        public override void Notificar()
-            => Task.Delay(TimeSpan.FromSeconds(2)).Wait();
-        public async override Task NotificarAsync()
-        {
-            await Task.Delay(TimeSpan.FromSeconds(2));
-        }
-    }
+    public WhatsApp(Usuario usuario) : base(usuario) { }
+
+    public override void Notificar()
+        => Task.Delay(TimeSpan.FromSeconds(2)).Wait();
+    public async override Task NotificarAsync()
+        => await Task.Delay(TimeSpan.FromSeconds(2));
 }
